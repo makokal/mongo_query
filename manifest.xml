@@ -1,10 +1,10 @@
 <package>
   <description brief="mongo_query">
 
-     mongo_query
+     mongo_query, interface for querrying mongodb for specific data
 
   </description>
-  <author>ias</author>
+  <author>Billy Okal</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/mongo_query</url>
@@ -14,6 +14,7 @@
   <depend package="actionlib"/>
   <depend package="actionlib_msgs"/>
   <depend package="topic_tools"/>
+  <depend package="mongo_query_msgs"/>
 
 </package>
 
