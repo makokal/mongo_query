@@ -5,6 +5,8 @@ roslib.load_manifest('mongo_query_msgs')
 
 import rospy
 import pymongo
+from turtlesim.msg import Velocity
+
 
 
 class QClient():
@@ -17,9 +19,11 @@ class QClient():
         rospy.loginfo('client connection status', self.mongo_client.alive())
 
 
-    def query_service_callback(self, query ):
+    def query_service_callback(self, query):
         """callback to handle querries"""
-        pass
+        if query.topic == '~/command_velocity':
+            mq = self.mongo_client.find({"time": {$gte: query.start, $lte: query.stop}})
+            print mq # for debug
 
 
 
